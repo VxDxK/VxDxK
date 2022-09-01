@@ -1,6 +1,5 @@
 ### Hi there 👋, my name is Vadim 
 
-- 🔭 I’m currently working on [Discord Roombot](https://github.com/VxDxK/VDK-room-bot) 
 - 🌱 I’m interested in Java and C++ 
 
 
