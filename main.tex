@@ -1,0 +1,112 @@
+\documentclass[11pt,a4paper]{moderncv}
+
+\moderncvtheme[purple]{classic}
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.8, top=1cm, bottom=0.5cm]{geometry}
+
+\usepackage[unicode]{hyperref}
+\usepackage{color}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+\usepackage{fontawesome5}
+\firstname{Vadim}
+\familyname{Ponomarev}
+\title{Intern developer}
+\address{}{Saint-Petersburg, Russia}
+\mobile{8-911-917-2928}
+\email{vadim.v.ponomarev@gmail.com}
+\social[github]{VxDxK}
+\newcommand*{\telegramsocialsymbol}  {\small\faTelegram}
+\RenewDocumentCommand{\social}{O{}O{}m}{%
+    \ifthenelse{\equal{#2}{}}%
+    {
+        \ifthenelse{\equal{#1}{linkedin}}{\collectionadd[linkedin]{socials}{\protect\httplink[#3]{www.linkedin.com/in/#3}}}{}%
+        \ifthenelse{\equal{#1}{twitter}} {\collectionadd[twitter]{socials} {\protect\httplink[#3]{www.twitter.com/#3}}}    {}%
+        \ifthenelse{\equal{#1}{github}}  {\collectionadd[github]{socials}  {\protect\httplink[#3]{www.github.com/#3}}}     {}%
+        \ifthenelse{\equal{#1}{telegram}}  {\collectionadd[telegram]{socials}  {\protect\httplink[#3]{www.t.me/#3}}}     {}%
+    }
+    {\collectionadd[#1]{socials}{\protect\httplink[#3]{#2}}}}
+\social[telegram]{vxdxk}
+
+% From tex.stackexchange
+\renewcommand*{\cventry}[7][.25em]{%
+    \cvitem[#1]{#2}{%
+            {\bfseries#3}%
+%   \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}% I changed this line (with comma) ...
+        \ifthenelse{\equal{#4}{}}{}{ {\slshape#4}}% ... into this one (without comma).
+        \ifthenelse{\equal{#5}{}}{}{ #5}%
+        \ifthenelse{\equal{#6}{}}{}{ #6}%
+        .\strut%
+        \ifx&#7&%
+        \else{\newline{}\begin{minipage}[t]{\linewidth}
+                            \small#7
+        \end{minipage}}\fi}}
+
+\makeatletter
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+\makeatother
+
+\begin{document}
+    \maketitle
+    \section{Experience}
+    \cvline
+      {Room bot}
+      {\url{https://github.com/VxDxK/VDK-room-bot}\newline{}
+      \textbf{Bot for Discord}\newline{}
+      Discord API experience.\newline}
+    \cvline
+      {ITMO EDU project}
+      {\url{https://github.com/VxDxK/programming-group-project}\newline{}
+      \textbf{Project for a university competition.}\newline{}
+      Group work.\newline{}
+      Lead role.\newline{}
+      Added CI\textbackslash CD to automize Javadoc uploading.}
+    \cvline
+    {UDP server and client(cli and gui)}
+    {\url{https://github.com/VxDxK/ifmo-labs-1/tree/proga-lab-8}\newline{}
+    \textbf{University semester work}\newline{}
+    Java NIO.\newline{}
+    Swing GUI.\newline{}
+    Postgresql database.
+    }
+    \cvline
+    {Ray tracer}
+    {\url{https://github.com/VxDxK/ray-tracer}\newline{}
+    Rendering 3D images with diffuse, metallic, dielectric spheres.\newline{}}
+    \cventry
+      {July 2021}
+      {Summer intership}
+      {ITIVITI}
+      {\newline{}\url{https://www.itiviti.com/}}{}
+      {Java core team.\newline{}
+      Software development. Configure Maven for reproducible builds}
+    \cventry
+      {1 Jul 2020 - 15 Jul 2020}
+      {Summer intership}
+      {ITIVITI}
+      {\newline{}\url{https://www.itiviti.com/}}{}
+      {}
+
+    \section{Skills}
+    \cvline
+    {Languages}{Java, Spring(MVC, Data, Security), SQL}
+    \cvline
+    {Tools}{Git, Maven, JUnit}
+    \cvline
+    {Experience}{Gradle, Hibernate, Jira}
+
+    \section{Education}
+
+    \subsection{University}
+    \cventry
+    {2021 - 2025}
+    {Computer science, Bachelor}
+    {St.Petersburg National Research University of Information Technologies, Mechanics \& Optics.}
+    {\newline Faculty of Software Engineering and Computer Systems.}{\newline Program Engineer}{}
+    \subsection{Courses}
+    \cventry
+    {2018 - 2020}
+    {ITMO olympic programming school}
+    {\newline Learned about algorithms, code optimization, graphs}
+    {}{}{}
+\end{document}
